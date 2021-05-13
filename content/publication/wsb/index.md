@@ -10,7 +10,7 @@ slug: >-
   /@npogeant/whats-inside-wallstreetbets-posts-topic-modeling-and-bi-grams-d00352082e55
 ---
 
-![](./img/1__2cpuqikqVLS4VHiz7CjKog.jpeg)
+![](../../img/1__2cpuqikqVLS4VHiz7CjKog.jpeg)
 
 The story around **GameStop** generated a lot of data to work on, whether it be posts, remarks, articles, interviews but also financial data with the _GME_ (GameStop index) stock especially.  
 As it mainly started with the well known **_WallStreetBets_** subreddit, it is interesting to look at its evolution before getting into the analysis of the content itself.
