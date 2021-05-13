@@ -17,13 +17,13 @@ organizations:
 bio: Diplomé de la Sorbonne en Économie, d'Assas en Finance, je termine actuellement un second master en Data Science à l'Université Gustave Eiffel. J'ai pris goût pour le Big Data il y a plusieurs années maintenant. J'adore l'analyse de données diverses et variées, les comprendre, en tirer des résultats,  des histoires en créant des visualisations. Que ce soit de l'analyse descriptive ou prédictive, j'aime concevoir à partir des outils que je connais comme apprendre et m'adapter à ceux que je ne maitrise pas encore.
 
 # Interests to show in About widget
-Intérêts:
+interests:
 - Data Visualization
 - Analyse de données
 - Machine Learning
 
 # Education to show in About widget
-Parcours:
+course:
   courses:
   - course: Master Data Science et Société Numérique
     institution: Université Gustave Eiffel
@@ -43,6 +43,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '/#contact'
+- icon: medium
+  icon_pack: fab
+  link: https://npogeant.medium.com/
 - icon: github
   icon_pack: fab
   link: https://github.com/npogeant
