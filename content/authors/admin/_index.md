@@ -23,7 +23,7 @@ interests:
 - Machine Learning
 
 # Education to show in About widget
-course:
+education:
   courses:
   - course: Master Data Science et Société Numérique
     institution: Université Gustave Eiffel
