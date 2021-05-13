@@ -1,152 +1,214 @@
 ---
-title: "What’s inside WallStreetBets posts\_? — Topic Modeling and Bi-grams"
+title: How to break into Finance — Indeed & Python
 description: >-
-  The story around GameStop generated a lot of data to work on, whether it be
-  posts, remarks, articles, interviews but also financial data…
-date: '2021-03-15T16:11:36.456Z'
+  Looking for a job can become difficult with the amount of offers referenced on
+  job listing websites. As a young graduated, I understood…
+date: '2021-03-08T16:34:30.467Z'
 categories: []
 keywords: []
-slug: >-
-  /@npogeant/whats-inside-wallstreetbets-posts-topic-modeling-and-bi-grams-d00352082e55
+slug: /@npogeant/how-to-break-into-finance-indeed-python-5cca7637e114
 ---
 
-![](../../img/1__2cpuqikqVLS4VHiz7CjKog.jpeg)
+![](../../img/0__aLoubdIQTxa5GzqH.jpg)
 
-The story around **GameStop** generated a lot of data to work on, whether it be posts, remarks, articles, interviews but also financial data with the _GME_ (GameStop index) stock especially.  
-As it mainly started with the well known **_WallStreetBets_** subreddit, it is interesting to look at its evolution before getting into the analysis of the content itself.
+Looking for a job can become difficult with the amount of offers referenced on job listing websites. As a young graduated, I understood that when I was searching for an internship. It became challenging once I saw all the different job titles, sometimes with long sentences, with terms I didn’t even know or even worse, without any specifications about what the job was. In fields like finance where new job labels are created everyday, you can quickly get lost and lose motivation.
 
-**_WallStreetBets_** subreddit is focused on finance, the stock market, financial advises… It has now over **9,500,000 subscribers**, more than **83k comments per day** and over **3,700 posts per day**. It is ranked as the second subreddit by daily comments.
+Therefore, I decided to look into Finance job offers to get some results and eventually get some key elements for someone that would want to work in the field.
 
-If we look at the subscribers daily evolution, we notice the sharp rise at the start of 2021 (GME’s story beginnings), from around 2M subs late December to near 10M early March.
+_Let’s start with the data…_
 
-![](../../img/1__gyoNZi2KO3Fivm431BxZMw.png)
+### **Indeed job offers**
 
-The same trend is observed with the number of comments per day during the period. In the end of 2020, the average WallStreetBets comments per day were close to 22k whereas today, it is around 55k.
+![](../../img/1____2i3clEZ3daF5oP5VqF2Fg.jpeg)
 
-![](../../img/1__yZ__SoEludPdyMhu7mPYtHA.png)
+I searched for strong data with interesting attributes on job offers. I considered Indeed as the perfect job platform, it is the more used one. I firstly tried to scrape Indeed pages with the keyword “finance”. The dataset collected was good but not enough and with limits, most of the rows were duplicated. Therefore, I decided to look for a tool with a better logic and robustness than my script. I chose the web data extractor software, [**Octoparse**](https://www.octoparse.com). Octoparse allows creating extraction of data with a live window of the website you scrape. You build your extracting circuit with multiple options. For my case, the extractor is great especially because it allows creating a pagination which is perfect for a website like Indeed. With some time on Octoparse, you would be able to get data from a vast array of sites.
 
-Now that we introduced the subject, let’s get to the heart of the matter.
+To have the most offers possible (having in mind that most jobs postings stay active for 30 days), I chose to extract data from **_indeed.com_**, **_uk.indeed.com_** and **_ca.indeed.com_** with the keyword “**_finance”_** .  
+Octoparse automatically extracts some of the data from pages, such as the title of each offers, the URL, the company name, the company rating, the summary of the post and the date. I wanted one more information and so, I added the extraction of the salary. This data is less informed than the other information but from what I got, it was enough.
 
-For this article, I worked with [Basssall](https://medium.com/u/98f4c4e7cd9f) to establish an analysis on the dataset we will present after. We wanted to examine the way WallStreetBets users interacted during the highlight of the GME story. What was the main topics of discussions ? Which words were the most used ? Do some trends emerged ? Was there different groups of people ?
+The dataset looks like this :
 
-_Let’s take a look at the data we used…_
+![](../../img/1__hZn2OtdMZmuk2syVZufWZA.png)
 
-### **The Data**
+I cleaned the dataset before working on it. As you can see, some rows have NaN values but I considered keeping NaN values for the Salary column because it is an information that I will work on later and it is not a issue for the analysis.
 
-![](../../img/1__ZYLTzAXxIRyzcXF71vZOaQ.jpeg)
+After removing nul values I got 3 homogeneous datasets.
 
-We decided to analyzed a dataset from **Kaggle** called : [Reddit WallStreetBets Posts](https://www.kaggle.com/gpreda/reddit-wallstreetsbets-posts) (shared by [Gabriel Preda](https://www.kaggle.com/gpreda)). The data, constituted with more than 40k rows and were collected with [**_praw_**](https://praw.readthedocs.io/en/latest/) (_The Python Reddit API Wrapper_). The posts period go from January 28th to February 15th of 2021 which is exactly the moment were GameStop and the entire market were imploding.  
-Our analysis will mainly be on the search of **topics in the content** (topic modeling).
+I merged the 3 datasets into one and the shape of the main table was **2183 rows (jobs offers)**. The offers went from “just posted” to “30+ days” which is a good representation of the financial job market of January/February 2021 as I did the extraction in late February.
 
-This is what the table looks like :
+### Main Results
 
-![](../../img/1__nkjb5t1OwmcOsn69ORBEaw.png)
+![](../../img/0__tJXeWeVgYZ70Gs8f.jpg)
 
-What will be interesting to look at are titles and bodies of the posts. However, the number of comments and the discussions scores are great information to notice the importance of the subject.
+The analysis I did has the aim to output some ideas from the financial job market and mainly Indeed job offers referring to finance in 3 countries : The United States of America, Canada and The United Kingdom.
 
-_Let’s go to the analysis…_
+I went through every single information I got, from the location of the offers to the words used in the summary. I did a basic statistic analysis with clear visualizations and also some Natural Language Processing work to try to understand better what the employers want.
 
-### Primary Study
+_Let’s now look at these results…_
 
-![](../../img/0__tz74x____QUtupBPs5.jpg)
+#### Where to work in Finance ?
 
-First of all, we wanted to show an overview of the dataset with the main information (except textual data).
+To maximize your chances of finding a job, looking into the top cities or the top companies in a field is something important. Obviously, the more you have offers, the more you will have opportunities to be hired. However, the more you have offers, the more you will have competitors against you, so you would have to be better than them to stand out.
 
-#### The posts frequency
+As the location specified on Indeed can be a city or an entire address, I had to clean the column with the next function (duplicated for every city with multiple addresses) :
 
-What was the content distribution during the period ? We grouped the table by the date to create this visualization :
+jobs.loc\[jobs.Location.str.contains('New York'), 'Location'\] = 'New York'
 
-![](../../img/1__q5PzF3O9rRqcgLhIvhqLCw.png)
+Once that done, I grouped the data by location to get the top 10 cities by job offers and it looked like that.
 
-January 29th is clearly the most active day on the subreddit with 15,694 unique posts.
+![](../../img/1__eKOTrFP07725jHowHW9GXg.png)
 
-#### The comments
+London is the top 1 with 229 job offers, followed by two Canadian cities, Toronto and Montreal. New York is at the bottom of the top 3 with 87 offers.
 
-Looking at the most commented posts can give an idea of the content we will analyze lately. We also used a groupby function to get the following chart :
+Now that we have the places to work in finance, let’s take a look at which companies are the most offering.
 
-![](../../img/1__OTEVtFqzzBorh1koEIAPHA.png)
+I started by looking at the number of companies in the dataset.
 
-We quickly understand that January 29th were the most commented day with various posts in the top 10.
+jobs.Company.nunique()
 
-### Natural Language Processing
+I counted 1410 unique companies from Morgan Stanley to East West College. There are all types of companies in the dataset.
 
-After highlighting some characteristics of the dataset, let’s focus on the main content, the **titles** and **bodies** of the posts. To do that, we firstly cleaned the text with a basic function using regular expression. Then we Tokenized, Lemmatized the text with the NLTK library and removed the stop words to have the most pertinent corpus possible.
+The ranking after a groupby function is the following :
 
-body\_df = pd.DataFrame(body\_df.body.apply(lambda x :clean\_text(x)))  
-body\_df.body = body\_df.body.apply(lambda x: ' '.join(\[word for word in x if word not in (stop)\]))  
-body\_df.body = body\_df.body.apply(lambda x: word\_tokenize(x))  
-body\_df.body = body\_df.body.apply(lambda x : \[lemmer.lemmatize(y) for y in x\])  
-body\_df.body  = body\_df.body .apply(lambda x: ' '.join(x))
+![](../../img/1__IX5lrpGCBAPFA8nZEJLUvA.png)
 
-The result of the cleaning leads to a word frequency count that we displayed with a wordcloud (we chose **the bodies of posts** to do this viz) :
+We observe that the Royal Bank of Canada is leading the top and that the Bank of Montreal is following. That can be surprising but the two are part of the 5 biggest banks of Canada and are within the 100 largest banks in the world. Facebook is the third company offering job in Finance with 19 job offers. We can spot Deloitte, the famous Anglo-American services network, but also Citigroup, JPMorgan Chase Bank and finally KPMG another network from the Big Four.
 
-![](../../img/1__ywt0qDg__V3ZrEBEKnDcvpQ.png)
+However, looking for a job is not just choosing the position but also the company. Therefore, it is important to know the company you are applying for. Indeed has a feature of rating allowing applicants to have an idea about the company. I looked at these ratings from 1 to 5 (on 5).
 
-_GME_, _Stock_, _Share_ are the most used words in the posts. _Short_, _buy_, _price_ are also present at the top. It is mostly financial words in the context of what was happening with GameStop and the hedge funds.
+jobs\_rating = jobs\[\['Company', 'Company\_Rating'\]\]  
+jobs\_rating.columns = \['Company', 'Rating'\]  
+jobs\_rating.sort\_values(by='Rating', inplace=True, ascending=False)  
+jobs\_rating.drop\_duplicates(inplace=True)
 
-_Now that we introduced the corpus by looking at the lexicon, let’s go further with the topic modeling…_
+![](../../img/1__7EhMoOl5Y0bHe121f0MFnQ.png)
 
-#### Topic Modeling
+One of the best rated companies is Linley & Simpson, a real estate enterprise in the UK. We can observe two companies rated 1, AgencyAnalytics and Toyota Subaru Sheboygan.
 
-Our goal was to identify some topics and eventually see if groups emerged from the context. Thus, we used the famous **Non-negative matrix factorization** (NMF) method to create our topics. Before that, we tried to build a **latent Dirichlet allocation** (**LDA**) model but the results were different so we decided to keep the NMF construction.
+It can be interesting to look at the ratings of the companies offering the most in Finance.
 
-Firstly, we built a TFIDF Vectorizer to remove least frequent tokens and to fit the model. Then we created the NMF model (with 5 topics) and we fitted it with the past matrix. Finally, we created a Dataframe with the components and their importance in the topics.
+jobs\_rating.loc\[jobs\_rating\['Company'\].isin(topjobs\_bycompany\['Company'\].tolist())\]
 
-vectors = TfidfVectorizer(min\_df=50, stop\_words='english')  
-X = vectors.fit\_transform(title\_df\_clean.title)  
-model = NMF(n\_components=5, random\_state=5)  
-model.fit(X)
+![](../../img/1__ATD__iPqjsi8aLp8S8QScpg.png)
 
-We did that for the titles and the bodies of the posts but we decided to only show the body ones because it is based on a better and bigger corpus whereas titles are just a sentences.
+Facebook is the best company from the employees, RBC/KPMG/Deloitte are the second ones. We notice that overall these companies are well rated.
 
-![](../../img/1__NbpKxjRiV6v0LG21a3Ts5w.png)
-undefined
+Now that we know which companies and cities to choose in the financial world, we need to know the title of the position that we have to target on.
 
-The **first topic** relates to the stock market, it is a general topic with words such as stock/market/price…
+#### In which jobs ?
 
-![](../../img/1__Ol__YXJ35fuW5Qlt6MJjf5w.png)
-undefined
+Job positions in finance are various, therefore I decided to gather titles into main ones to be able to analyze the distribution of main titles in the field. From 1705 titles before cleaning to 18 titles after, I was able to differentiate Financial Analysts to Financial Managers, Directors, Assistants… Then, I created a bar chart counting the number of offers by job titles.
 
-The **second topic** is around the term : buy. It is referred to the buying of GME and other stocks.
+Before cleaning :
 
-![](../../img/1__x9MxQ7tyzCkpcWuRSo9piQ.png)
-undefined
+![](../../img/1__iayyqfiUVegqAEHmhPly8w.png)
 
-The **third topic** is more around holding the position, “to the moon”, winning…
+After cleaning :
 
-![](../../img/1__7KyLndCEz__LLCZan3VPCNg.png)
-undefined
+![](../../img/1__gIVCJR9BSxj2IuTYH0Ij4A.png)
 
-This **fourth topic** is targeting the stocks themselves : AMC, GME, NOK, BB, NAKD…
+We observe Financial Analysts outperforming the others with 717 job offers, followed by Financial Managers and Financial Directors.
 
-![](../../img/1__APB1__7EcLvW__ZISdUw8__pg.png)
-undefined
+If we now take a look at the locations where are these different jobs are working, the results are alluring.
 
-An finally, the **last topic** is very interesting because it shows the fight between the reddit users from WSB and trading apps such as the famous **_Robinhood_**.
+![](../../img/1__auyOsBUBKj9lTkaKyVmyWg.png)
+![](../../img/1__rSxNh2I6WXXerZF9VGPXIg.png)
+![](../../img/1__xkV3QWtSM4gnq1ujUUzf6A.png)
 
-_Looking for topics in a corpus can explain the context of a content, lt’s see if some bi-grams can be seen and detailed…_
+**Financial Analysts** are mostly based in London with almost half of them being there, then Toronto and Montreal with 40% cumulative. New York is their fourth most represented city. with just 10%.
 
-#### Bi-grams frequency
+**Financial Managers** are also mostly based in London but with almost the same numbers in Toronto. We can spot Menlo Park being in the top 3 which is interesting to note.
 
-Finally, we wanted to look at the bi-grams in the corpus and eventually find some interesting one. A **bigram** or **digram** _is every sequence of two adjacent elements in a string of tokens, which are typically letters, syllables, or words_ (definition.net).
+**Financial Directors** are differently distributed with Toronto being the first location and London the second one.
 
-To create these sequences, we used the library NLTK again with the function _nltk.bigrams()_.
+We know more about job titles but what about **types of employment** in the dataset ?   
+To get the information, I associated every titles with ‘“Intern” as Internship, titles with ‘“Apprentice” as Apprenticeship and the others as Full Time jobs.  
+I got the following results :
 
-nltk\_tokens = nltk.word\_tokenize('\\n'.join(title\_df\_clean.title))  
-titles\_bigrams = \['\_'.join(b) for b in nltk.bigrams(nltk\_tokens)\]
+_Full Time :_ **1926 offers** _Intern :_ **235 offers** _Apprentice_ : **22 offers**
 
-We looked for the bi-grams of titles and bodies, here are the results :
+Now that we have an idea of the different positions in finance and their distribution, let’s try to see which one is the **highest paid** by analyzing the salaries.
 
-![](../../img/1__jUYvia__IMNEqYl9QgHG75g.png)
+To do that, I needed to work on the salaries column because the information in Indeed is stands as “XXX a year”. I had to clean this up and convert it to float numbers.  
+I used some regular expressions and created some function to get to the results. I needed also to convert £ into $, so I divided the dataset to deal with £ and I used a library to convert it correctly.
 
-We notice **gme\_amc** at the top which are the two stocks that were targeted by the subreddit. Moreover, we see **buy\_gme** (the goal of amateur investors), **hedge\_fund** (the best enemy of users from WallStreetBets) and **still\_holding**/**hold\_line**/**hold\_hold** (the main action that were present during the period).
+Let’s see the distribution of salaries :
 
-![](../../img/1__YOpSMtlzwdDLxVkRkJF__2Q.png)
+salaryperyrs.Salary.describe()
 
-For the bodies, we spot **x\_b** as the most frequent bi-gram. It is followed by **hedge\_fund** and **financial\_advice**. We didn’t really find what x\_b was meaning but the other bi-grams are rather coherent.
+The highest salary equals to **$350,000** and the least one is **$10,051**. The median salary is **$44,212** which is quite good I would say.
+
+When we now look at the most paid jobs, we get these results :
+
+Risk Manager       $111,000                   
+Financial Director $102,632                   
+Trader             $90,000
+
+At the contrary, the least paid jobs are _Accountant_ and _Financial Assistant_ with less than $28,000 on average.
+
+The highest positions are in these companies :
+
+Xero                                                   $350,000                   
+Los Angeles County Department of Human Resources       $325,563                 Medical University of South Carolina                   $251,489
+
+Companies with the lowest wages are mostly in College, such as _Cambridge Regional College_ or _MK College_.
+
+Finally, which cities pay the most ?
+
+Los Angeles       $325,563                   
+Charleston        $251,489                   
+Denver            $237,500
+
+And the least are cities such as _Morecambe_ or _Barry_ in the UK.
+
+To finish this analysis, I looked at the summary of the offers and work with NLP processing to get some outputs.
+
+#### **How to get in Finance ?**
+
+To analyze the summary of the offers, I decided to gather summaries by titles first and then to look at the entire dataset.
+
+First of all, I cleaned up the summaries with regular expressions (clean\_sum is a special function with regex inside):
+
+sum\_clean = pd.DataFrame(offer\_sum.Summary.apply(lambda x :clean\_sum(x)))  
+sum\_clean.Summary = sum\_clean.Summary.apply(lambda x: ' '.join(\[word for word in x if word not in (stop)\]))
+
+Once cleaned, let’s tokenize and lemmatize with the NLTK library :
+
+lemmer = WordNetLemmatizer()  
+sum\_clean.Summary = sum\_clean.Summary.apply(lambda x: word\_tokenize(x))  
+sum\_clean.Summary = sum\_clean.Summary.apply(lambda x : \[lemmer.lemmatize(y) for y in x\])
+
+The summary now tokenized and lemmatized, we are able to show the frequency of each word in the dataset (by titles firstly). I used the _Counter()_ function to create a frequency dataframe and built 3 wordclouds for Financial Analysts, Traders and Financial Assistants.
+
+**Financial Analyst :**
+
+![](../../img/1__c6M__MgNxyF91lWeSNFIYLg.png)
+
+We can spot the lexicon of analysis, business in its summary. Management looks important for a Financial Analyst, working as a team too, being a support for the company... Overall, the summary is mostly based on the financial lexicon. In the middle, we observe the word “bachelor” meaning that having a bachelor degree should be essential.
+
+**Trader :**
+
+![](../../img/1__wsE9Fk7jJtc0uXORiC82SQ.png)
+
+We see another lexicon than the previous wordcloud. It is clearly focused on the market, trading, assets… The Trader needs to have “strong skills”, “abilities” about financial markets.
+
+**Financial Assistant :**
+
+![](../../img/1__Eg6aVf1Ds__LLMMvAJsxXuA.png)
+
+A financial assistant has to be a “support”, he has to assist, to be part of a “team”, he operates, reports and is responsible.
+
+Let’s conclude with the frequency in the **entire corpus of summaries** and try to notice if some interesting words stand out.  
+The ranking looks like this :
+
+![](../../img/1__HYMtaxru8oZ__AhSTc__47nQ.png)
+
+What I find out compelling is the large distribution difference between _experience_ and _degree_ in the corpus of financial job offers. We observe that experience is twice as present as degree. Being experienced is clearly more important than having a degree. It doesn’t mean that having a degree isn’t important but you will need to gain financial experiences during your classes to face other applicants.
 
 ### Conclusion
 
-With this analysis, we wanted to understand how the WallStreetBets writers and readers where talking during the story around GameStop and its financial impact. Overall, they were more united than disseminated in multiple groups. We can clearly spot the deviance against Hedge Funds and the trading platforms like Robinhood which was one of the main aspect of the story. GameStop was not really here for its services as a company but mostly as a stock to fight the shorters. The topics we found are telling the importance of the event about the only one subject that was emerging int the corpus.
+This analysis had the aim to output results from a job offers with the keyword “**finance**”. It can be reproduced with any other keyword and it allows to understand what types of data we can find on Indeed.   
+It could be a good way to use Indeed data for **personal motivations**, finding a job, targeting the perfect cities of companies. Moreover, the frequency of words in the summaries can be a tool to create better resume for example.
 
-Thank you for reading the article, I hope you enjoyed it, you can follow me to be informed of my future writings. The entire analysis is available on my [Github](https://github.com/npogeant/wsb-reddit).
+Thank you for taking the time to read the article, I hope you enjoyed it !  
+You can find the code on my [**GitHub**](https://github.com/npogeant/indeed-finance) if you are interested.
