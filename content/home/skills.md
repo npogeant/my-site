@@ -18,7 +18,7 @@ subtitle:
 feature:
 - description: Pandas, Numpy, Plotly, Matplotlib, NLTK, Scikit-Learn
   icon: python
-  icon_pack: fas
+  icon_pack: fab
   name: Python
 - description: GGplot, Ddplyr
   icon: r-project
