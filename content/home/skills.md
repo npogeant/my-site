@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 30
 
-title: Skills
+title: Compétences
 subtitle:
 
 # Showcase personal skills or business features.
@@ -24,11 +24,11 @@ feature:
   icon: r-project
   icon_pack: fab
   name: R
-- description: Tout
+- description: Création d'application, data visualization
   icon: tableau-software
   icon_pack: custom
   name: Tableau
-- description: 100%
+- description: Descriptives, inférentielles, prédictives, appliquées à la finance
   icon: chart-line
   icon_pack: fas
   name: Statistiques

@@ -9,8 +9,6 @@ keywords: []
 slug: /@npogeant/the-amazon-stock-vs-twitter-in-2019-931c88831fc1
 ---
 
-![](../../img/0__hSZuQKjVygiyq7nU.jpg)
-
 As a graduate in Finance and a current student in Data Science, I decided to look at a not super famous field in Finance called “behavioral finance”.  
 This field tries to understand and explain why investors behave in a certain way depending on the situation. The main goal of this field is to show that the Financial Standard theory based on the fact that financial individuals take decisions from a rational perspective is not what we can see.
 

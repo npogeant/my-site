@@ -9,8 +9,6 @@ keywords: []
 slug: /@npogeant/how-to-break-into-finance-indeed-python-5cca7637e114
 ---
 
-![](../../img/0__aLoubdIQTxa5GzqH.jpg)
-
 Looking for a job can become difficult with the amount of offers referenced on job listing websites. As a young graduated, I understood that when I was searching for an internship. It became challenging once I saw all the different job titles, sometimes with long sentences, with terms I didn’t even know or even worse, without any specifications about what the job was. In fields like finance where new job labels are created everyday, you can quickly get lost and lose motivation.
 
 Therefore, I decided to look into Finance job offers to get some results and eventually get some key elements for someone that would want to work in the field.
