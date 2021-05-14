@@ -2,14 +2,10 @@
 name = "Default"
 
 # Optional Google font URL
-google_fonts = ""
+google_fonts = "family=Mulish:wght@300;500"
 
 # Font families
-heading_font = "Public Sans Regular"
-body_font = "Public Sans Regular"
-nav_font = "Public Sans Regular"
-mono_font = "monospace"
-
-# Font size
-font_size = "20"
-font_size_small = "16"
+heading_font = "Mulish"
+body_font = "Mulish"
+nav_font = "Mulish"
+mono_font = "Mulish"
