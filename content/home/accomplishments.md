@@ -26,8 +26,7 @@ item:
 - certificate_url: https://www.coursera.org/account/accomplishments/specialization/certificate/RHE2AWEUHQCA
   date_end: ""
   date_start: "2020-05-25"
-  description: " * Develop hands-on skills using the tools, languages, and libraries used by professional data scientists
-                 * Import and clean data sets, analyze and visualize data, and build and evaluate machine learning models and pipelines using Python"
+  description: "Développez des compétences en science des données, découvrez Python et SQL, analysez et visualisez des données et créez des modèles d’apprentissage automatique"
   organization: IBM Data Science Professional Certificate
   organization_url: https://www.coursera.org/professional-certificates/ibm-data-science
   title: Spécialisation IBM Data Science
