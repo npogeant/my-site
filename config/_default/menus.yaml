@@ -10,11 +10,11 @@ main:
   - name: Compétences
     url: '#skills'
     weight: 20
- - name: Expérience
-    url: '#experience'
-    weight: 30
   - name: Articles et projets
     url: '#posts'
+    weight: 30
+  - name: Expérience
+    url: '#experience'
     weight: 40
   - name: Contact
     url: '#contact'
