@@ -32,6 +32,14 @@ feature:
   icon: chart-line
   icon_pack: fas
   name: Statistiques
+- description: Importer les données, les gérer, créer de requêtes 
+  icon: sql
+  icon_pack: custom
+  name: SQL
+- description: T
+  icon: dataiku
+  icon_pack: custom
+  name: Dataiku
 
 # Uncomment to use emoji icons.
 #- icon: ":smile:"
