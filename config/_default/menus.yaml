@@ -10,9 +10,15 @@ main:
   - name: Posts
     url: '#posts'
     weight: 20
+  - name: Compétences
+    url: '#skills'
+    weight: 30
+  - name: Expérience
+    url: '#experience'
+    weight: 40
   - name: Contact
     url: '#contact'
-    weight: 30
+    weight: 50
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
