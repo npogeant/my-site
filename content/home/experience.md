@@ -25,7 +25,7 @@ experience:
   - title: Apprenti Chargé d'études
     company: Menarini
     company_url: ''
-    company_logo: comp-m
+    company_logo: org-x
     location: California
     date_start: '2021-01-01'
     date_end: ''
