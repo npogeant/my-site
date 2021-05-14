@@ -7,7 +7,7 @@
 
 theme: minimal
 day_night: true
-font: 'my_font_set'
+font: ''
 font_size: L
 
 # SEO
@@ -80,7 +80,6 @@ copyright_license:
   notice: 'This work is licensed under {license}'
 abstract_length: 135
 plugins_js: []
-plugins_css: ["custom"]
 avatar:
   gravatar: false
   shape: circle
