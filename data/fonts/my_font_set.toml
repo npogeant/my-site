@@ -1,8 +1,15 @@
 # Font style metadata
-name = "Bloomberg"
+name = "Default"
+
+# Optional Google font URL
+google_fonts = ""
 
 # Font families
-heading_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBlack.ttf"
-body_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf"
-nav_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf"
-mono_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf"
+heading_font = "Public Sans Regular"
+body_font = "Public Sans Regular"
+nav_font = "Public Sans Regular"
+mono_font = "monospace"
+
+# Font size
+font_size = "20"
+font_size_small = "16"
