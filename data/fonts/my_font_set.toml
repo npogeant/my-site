@@ -1,0 +1,8 @@
+# Font style metadata
+name = "Bloomberg"
+
+# Font families
+heading_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBlack.ttf"
+body_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf"
+nav_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf"
+mono_font = "data/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf"
