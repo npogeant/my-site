@@ -14,7 +14,7 @@ organizations:
   url: https://www.menarini.fr/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Diplomé de la Sorbonne en Économie, d'Assas en Finance, je termine actuellement un second master en Data Science à l'Université Gustave Eiffel. J'ai pris goût pour le Big Data il y a plusieurs années maintenant. J'adore l'analyse de données diverses et variées, les comprendre, en tirer des résultats,  des histoires en créant des visualisations. Que ce soit de l'analyse descriptive ou prédictive, j'aime concevoir à partir des outils que je connais comme apprendre et m'adapter à ceux que je ne maitrise pas encore.
+bio: Diplomé de la Sorbonne en Économie, d'Assas en Finance, je termine actuellement un second master en Data Science à l'Université Gustave Eiffel. J'ai pris goût pour le Big Data il y a plusieurs années maintenant.
 
 # Interests to show in About widget
 interests:
@@ -43,15 +43,15 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '/#contact'
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/nicolaspogeant/
 - icon: medium
   icon_pack: fab
   link: https://npogeant.medium.com/
 - icon: github
   icon_pack: fab
   link: https://github.com/npogeant
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/in/nicolaspogeant/
 
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/media/resume.pdf`, enable `ai` icons in `params.toml`, 
@@ -70,4 +70,4 @@ highlight_name: false
 Diplomé de la Sorbonne en Économie, d'Assas en Finance, je termine actuellement un second master en Data Science à l'Université Gustave Eiffel. J'ai pris goût pour le Big Data il y a plusieurs années maintenant. J'adore l'analyse de données diverses et variées, les comprendre, en tirer des résultats,  des histoires en créant des visualisations. Que ce soit de l'analyse descriptive ou prédictive, j'aime concevoir à partir des outils que je connais comme apprendre et m'adapter à ceux que je ne maitrise pas encore.
 
 
-{{< icon name="download" pack="fas" >}} Mon CV est disponible ici {{< staticref "media/demo_resume.pdf" "newtab" >}}CVnpogeant{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Mon CV est disponible ici {{< staticref "media/CV2020.pdf" "newtab" >}}CVnpogeant{{< /staticref >}}.
