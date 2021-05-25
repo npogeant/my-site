@@ -32,7 +32,7 @@ feature:
   icon: chart-line
   icon_pack: fas
   name: Statistiques
-- description: D3.js
+- description: Data Visualisation avec D3.js
   icon: htmlcssjs
   icon_pack: custom
   name: HTML, CSS, JavaScript
