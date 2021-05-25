@@ -36,7 +36,6 @@ education:
     year: 2018
   - course: Licence en Economie
     institution: Paris I Panthéon Sorbonne
-    institution: 222
     year: 2015
 
 # Social/Academic Networking

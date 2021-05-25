@@ -32,6 +32,10 @@ feature:
   icon: chart-line
   icon_pack: fas
   name: Statistiques
+- description: D3.js
+  icon: htmlcssjs
+  icon_pack: custom
+  name: HTML, CSS, JavaScript
 - description: Importer les données, les gérer, créer de requêtes 
   icon: sql
   icon_pack: custom
