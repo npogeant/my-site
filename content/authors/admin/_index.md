@@ -25,18 +25,18 @@ interests:
 # Education to show in About widget
 education:
   courses:
+  - course: Datasprint (Digital Methods Initiative)
+    institution: Université d'Amsterdam (UvA)
+    year: 2021   
   - course: Master Data Science et Société Numérique
     institution: Université Gustave Eiffel
     year: 2020 - 2021
-  - course: Datasprint (Digital Methods Initiative)
-    institution: Université d'Amsterdam (UvA)
-    year: 2021 
   - course: Master Monnaie Banque Finance Assurances
     institution: Université Paris II Panthéon Assas
-    year: 2018 - 2020
+    year: 2018
   - course: Licence en Economie
-    institution: 2015 - 2018                             <br /> Université Paris I Panthéon Sorbonne
-    year: 2015 - 2018
+    institution: Paris I Panthéon Sorbonne
+    year: 2015
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
