@@ -32,7 +32,8 @@ education:
     institution: Université Paris II Panthéon Assas
     year: 2018 - 2020
   - course: Licence en Economie
-    institution: Université Paris I Panthéon Sorbonne
+    institution: 2015 - 2018\
+    Université Paris I Panthéon Sorbonne
     year: 2015 - 2018
 
 # Social/Academic Networking
