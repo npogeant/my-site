@@ -28,14 +28,14 @@ education:
   - course: Master Data Science et Société Numérique
     institution: Université Gustave Eiffel
     year: 2020 - 2021
-  - course: Datasprint (Digital Methods Initiative) [link](url){:target="_blank"}
+  - course: Datasprint (Digital Methods Initiative)
     institution: Université d'Amsterdam (UvA)
     year: 2021 
   - course: Master Monnaie Banque Finance Assurances
     institution: Université Paris II Panthéon Assas
     year: 2018 - 2020
   - course: Licence en Economie
-    institution: 2015 - 2018  Université Paris I Panthéon Sorbonne
+    institution: 2015 - 2018                             Université Paris I Panthéon Sorbonne
     year: 2015 - 2018
 
 # Social/Academic Networking
