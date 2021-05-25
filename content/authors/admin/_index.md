@@ -28,7 +28,7 @@ education:
   - course: Master Data Science et Société Numérique
     institution: Université Gustave Eiffel
     year: 2020 - 2021
-  - course: Datasprint (Digital Methods Initiative) {{< staticref "media/CV2020.pdf" "newtab" >}}CV{{< /staticref >}}
+  - course: Datasprint (Digital Methods Initiative) [link](url){:target="_blank"}
     institution: Université d'Amsterdam (UvA)
     year: 2021 
   - course: Master Monnaie Banque Finance Assurances
