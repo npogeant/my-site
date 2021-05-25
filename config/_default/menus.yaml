@@ -4,17 +4,17 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Home
+  - name: À propos
     url: '#about'
     weight: 10
   - name: Compétences
     url: '#skills'
     weight: 20
-  - name: Articles et projets
-    url: '#posts'
-    weight: 30
   - name: Expérience
     url: '#experience'
+    weight: 30
+  - name: Articles et projets
+    url: '#posts'
     weight: 40
   - name: Contact
     url: '#contact'
