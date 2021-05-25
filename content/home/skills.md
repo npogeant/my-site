@@ -40,6 +40,10 @@ feature:
   icon: sql
   icon_pack: custom
   name: SQL
+- description: Maitrise de la suite Microsoft
+  icon: microsoft
+  icon_pack: fab
+  name: Excel, Word, Powerpoint, Access, Power BI
 - description: T
   icon: dataiku
   icon_pack: custom
