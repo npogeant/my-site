@@ -55,8 +55,8 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/npogeant
-- icon: observable
-  icon_pack: custom
+- icon: eye
+  icon_pack: fas
   link: https://observablehq.com/@npogeant
 
 # Link to a PDF of your resume/CV.
