@@ -69,13 +69,13 @@ We quickly understand that January 29th were the most commented day with various
 ### Natural Language Processing
 
 After highlighting some characteristics of the dataset, let’s focus on the main content, the **titles** and **bodies** of the posts. To do that, we firstly cleaned the text with a basic function using regular expression. Then we Tokenized, Lemmatized the text with the NLTK library and removed the stop words to have the most pertinent corpus possible.
-
+```python
 body\_df = pd.DataFrame(body\_df.body.apply(lambda x :clean\_text(x)))  
 body\_df.body = body\_df.body.apply(lambda x: ' '.join(\[word for word in x if word not in (stop)\]))  
 body\_df.body = body\_df.body.apply(lambda x: word\_tokenize(x))  
 body\_df.body = body\_df.body.apply(lambda x : \[lemmer.lemmatize(y) for y in x\])  
 body\_df.body  = body\_df.body .apply(lambda x: ' '.join(x))
-
+```
 The result of the cleaning leads to a word frequency count that we displayed with a wordcloud (we chose **the bodies of posts** to do this viz) :
 
 ![](../../img/1__ywt0qDg__V3ZrEBEKnDcvpQ.png)
@@ -89,12 +89,12 @@ _Now that we introduced the corpus by looking at the lexicon, let’s go further
 Our goal was to identify some topics and eventually see if groups emerged from the context. Thus, we used the famous **Non-negative matrix factorization** (NMF) method to create our topics. Before that, we tried to build a **latent Dirichlet allocation** (**LDA**) model but the results were different so we decided to keep the NMF construction.
 
 Firstly, we built a TFIDF Vectorizer to remove least frequent tokens and to fit the model. Then we created the NMF model (with 5 topics) and we fitted it with the past matrix. Finally, we created a Dataframe with the components and their importance in the topics.
-
+```python
 vectors = TfidfVectorizer(min\_df=50, stop\_words='english')  
 X = vectors.fit\_transform(title\_df\_clean.title)  
 model = NMF(n\_components=5, random\_state=5)  
 model.fit(X)
-
+```
 We did that for the titles and the bodies of the posts but we decided to only show the body ones because it is based on a better and bigger corpus whereas titles are just a sentences.
 
 ![](../../img/1__NbpKxjRiV6v0LG21a3Ts5w.png)
@@ -129,10 +129,10 @@ _Looking for topics in a corpus can explain the context of a content, lt’s see
 Finally, we wanted to look at the bi-grams in the corpus and eventually find some interesting one. A **bigram** or **digram** _is every sequence of two adjacent elements in a string of tokens, which are typically letters, syllables, or words_ (definition.net).
 
 To create these sequences, we used the library NLTK again with the function _nltk.bigrams()_.
-
+```python
 nltk\_tokens = nltk.word\_tokenize('\\n'.join(title\_df\_clean.title))  
 titles\_bigrams = \['\_'.join(b) for b in nltk.bigrams(nltk\_tokens)\]
-
+```
 We looked for the bi-grams of titles and bodies, here are the results :
 
 ![](../../img/1__jUYvia__IMNEqYl9QgHG75g.png)

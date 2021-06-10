@@ -56,7 +56,7 @@ _Let’s now look at the tweets and do the analysis…_
 ### **I - Amazon Tweets for 2019**
 
 As I said before, I only looked at tweets with $AMZN to stay relevant with what I wanted to do. If we pay attention at the number of tweets by day, we get that output.
-
+```python
 import plotly.express as px
 
 AMZN2019\_tweets = AMZN2019.groupby(\['date', 'month'\]\['username'\].count().reset\_index()  
@@ -68,7 +68,7 @@ fig.update\_layout(showlegend=False, plot\_bgcolor='white', yaxis=dict(title='')
 fig.update(layout=dict(title=dict(x=0.5)))  
 fig.update\_xaxes(visible=False)  
 fig.show()
-
+```
 ![](../../img/1__w7Zw1BZnWvakwGK1rUMubw.jpeg)
 
 We can see a trend for each month, the day with the least tweets are the weekends because the Stock Exchange is closed. However, some days are clearly different from the others with more than 1500 tweets.
@@ -87,11 +87,11 @@ The 3rd day with the most tweets (February the 1st) is also explainable by an an
 **Now let’s look at who tweets ?**
 
 If we focus on the number of likes for the tweets during the year, we get the following dataframe showing that “_fillbeforeshill_” is the top 1.
-
+```python
 AMZN2019\_rt = pd.DataFrame(AMZN2019\[\["username", "retweetCount", "likeCount"\]\])  
 AMZN2019\_rt.sort\_values(by="likeCount", inplace=True, ascending=False)  
 AMZN2019\_rt\[:10\]
-
+```
 ![](../../img/1__HxzKcfcXB4snp__4jPXa5nQ.png)
 
 His tweet is not really a financial tweet and that can explain why it had got so many likes.
@@ -104,24 +104,24 @@ On the side of the most followed users that tweeted about $AMZN during the year,
 To make this ranking, I had to use the information about the username as I said in the data presentation at the beginning.
 
 userframes = \[userJan, userFeb, userMar, userApr, userMay, userJun, userJul, userAug, userSept, userOct, userNov, userDec\]
-
+```python
 AMZN2019\_user = pd.concat(userframes)  
 AMZN2019\_user.reset\_index(inplace=True)  
 AMZN2019\_user.drop(columns=\['index'\], inplace=True)  
 AMZN2019\_user.sort\_values(by=\['followersCount'\], inplace=True, ascending=True)
-
+```
 ![](../../img/1__p4sUkYPFmeC4QQLPk8ihRQ.png)
 
 Reuters is the top 1 with 22 813 881 followers, the next are all media as well excepted for Jim Cramer and @OM.
 
 For the rest of my analysis, I had to focus on English tweets only, so I looked at what languages where used in the corpus. I made a dataframe counting the tweets by the language used for the entire year.
-
+```python
 tweetsperlang = pd.DataFrame(AMZN2019\['lang'\].value\_counts())  
 tweetsperlang.reset\_index(inplace=True)  
 tweetsperlang.columns = \["Language", "Number"\]  
 tweetsperlang.loc\[len(tweetsperlang.index)\] = \['other', tweetsperlang.iloc\[6:37, 1\].sum()\]  
 tweetsperlang.drop(tweetsperlang.loc\[6:37\].index, inplace=True)
-
+```
 ![](../../img/1__mSI1bG9yIqwOGikw4m__xRg.png)
 
 We observe that English is the most used language during the entire year concerning this subject.
@@ -130,7 +130,7 @@ We observe that English is the most used language during the entire year concern
 
 Let’s look at the tweets them self by using the famous library [**NLTK**](https://www.nltk.org/) firstly. This library is used to work with human language data. It allows text processing as classification, tokenization, stemming…  
 To start, I had to clean the tweets from special characters, links, emojis etc, so I used **regular expressions** (regex) with the library _“re”_ to do that for all the corpus. I created a function that I applied on the column ‘content’ and used .
-
+```python
 import re  
 import nltk  
 nltk.download('stopwords')  
@@ -155,7 +155,7 @@ def cleaning\_tweets(text):
 AMZN2019\_eng\["content\_modified"\] = AMZN2019\_eng\['content'\].apply(lambda x: cleaning\_tweets(x))
 
 AMZN2019\_eng\["content\_modified"\] = AMZN2019\_eng\["content\_modified"\].apply(lambda x: ' '.join(\[word for word in x if word not in (stop)\]))
-
+```
 To show the output of this, let’s take a tweet and see the difference :
 
 > Original tweet : “Meng’s Arrest Vs. The Rule Of Law $QQQ $AAPL $AMZN [https://t.co/AnCqdd8cuq](https://t.co/AnCqdd8cuq)”
@@ -164,24 +164,24 @@ To show the output of this, let’s take a tweet and see the difference :
 
 Now that we have proper tweets, we are able to tokenize it with NLTK and obtain statistics from them. Word tokenization is the task of splitting sentences into words.  
 I used that to **count each words** in the entire corpus of tweets and see the most common.
-
+```python
 tweets =  AMZN2019\_eng\['content\_modified'\].str.lower()  
 word\_counts = Counter(word\_tokenize('\\n'.join(tweets)))
 
 amzn\_freq = pd.DataFrame.from\_dict(word\_counts, orient='index').reset\_index()  
 amzn\_freq.columns=\["Word", "Frequency"\]  
 amzn\_freq.sort\_values(by=\['Frequency'\], inplace=True, ascending=True)
-
+```
 ![](../../img/1__1nITZVvealM2WbNSRtIrTg.png)
 
 As the output leads to a lot of stock index, I decided to remove the main ones and create a word cloud of the new result.
-
+```python
 from wordcloud import ImageColorGenerator
 
 wc = WordCloud(mask=mask,max\_words=2000, color\_func=image\_colours, background\_color='white')  
 wc.generate\_from\_frequencies(word\_counts)  
 wc.to\_image()
-
+```
 ![](../../img/1__Yhpg6QXvPuA4XaQ5nf2mIA.png)
 
 The vocabulary of finance is clear and obvious. Important words can be spot such as **“buy”**, **“option”** or **“call”**.
@@ -199,7 +199,7 @@ As I introduced at the beginning, I used FinBERT to classify the tweets and get 
 
 For my work, I used the ‘ProsusAI/finbert’ model that I presented before, available on HuggingFace.co. To set it, I worked with the AutoTokenizer and the AutoModelForSequenceClassification from the library. With these classes, the model is set up with the weights and config he has been built with.  
 I applied the classifier on each month because of the size of the tables.
-
+```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification  
 from transformers import pipeline
 
@@ -209,7 +209,7 @@ tokenizer = AutoTokenizer.from\_pretrained(model\_name)
 classifier = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
 
 aprSentiment = (aprSentiment.assign(sentiment = lambda x: x\['content\_modified'\].apply(lambda s: classifier(s))).assign(label = lambda x: x\['sentiment'\].apply(lambda s: (s\[0\]\['label'\])),score = lambda x: x\['sentiment'\].apply(lambda s: (s\[0\]\['score'\]))))
-
+```
 Here is an example for the month of April :
 
 ![](../../img/1__ZcXzazvZDIZrXqp5Ab0w5A.png)
@@ -219,12 +219,12 @@ The classifier gives the label and the score associated to this label. The score
 As the neutral sentiment was dominating the year and every month, I decided to only keep the Positive and Negative sentiments. It’s important to have in mind that the neutral sentiment is more frequent than the other because a lot of tweets are just ads, information about the price and more that doesn’t give any real sentiment about $AMZN.
 
 Before looking at the sentiment each month, let’s observe the close price evolution of the stock with the library _yfinance_ (from Yahoo Finance)_._
-
+```python
 import yfinance as yf
 
 amzn\_df = yf.download('AMZN',start='2019-01-01',  
                       end='2019-12-31',progress=False)
-
+```
 ![](../../img/1__PQglNMz9MtVi1rvc2JeNFg.png)
 
 The stock’s price increased overall, it went from $1539 in January to $1846 at the end of the year. What is interesting is watching the monthly percentage change and comparing it to the sentiment got before.
@@ -240,13 +240,13 @@ And the monthly sentiment within the entire data set was :
 As we observe, most of the months are labelled by more positive sentiments in the tweets than negative sentiments. That can be understood by the fact the Amazon was largely positive during the entire year of 2019, increasing by 20%. The company is seen very positively from its results every quarter.
 
 To finish my analysis, I decided to look at the sentiment from the most influencing Twitter Account from the data set. I kept 20 users from _CNBC_ to _FaceTheNation_ and observed the sentiment from their tweets. Obviously, the results lead to less sentiment data because $AMZN tweets are specific ones.
-
+```python
 top20 = AMZNsent.loc\[AMZNsent\['username'\].isin(\["CNBC", "Reuters", "ANCALERTS", "MarketWatch", "ReuterBiz", "NYSE", "jimcramer", "om", "YahooFinance", "themotleyfool", "TheStreet", "Stocktwits", "Varneyco","CBOE", "Nasdaq","CNBCnow", "ReutersIndia", "cvpayne", "ValaAshar", "FaceTheNation"\])\]
 
 AMZNsent\_b = top20.groupby(\['month', 'label', 'month\_digit'\])\['username'\].count().reset\_index()  
 AMZNsent\_b.columns = \["Month", "Label", 'Month\_digit', 'Number'\]  
 AMZNsent\_b.sort\_values(by=\['Month\_digit'\], inplace=True)
-
+```
 ![](../../img/1__qu3GP2c3WzXg4fg4Ism3zQ.png)
 
 Some months have a real difference between positives and negatives. April for example, it seems that this month, the top 20 were really positive about $AMZN. The stock increased by 6,19% during this month. On the contrary, in July 2019, the top 20 was also very optimistic whereas the stock lowered by 2,88%.

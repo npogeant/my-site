@@ -33,7 +33,7 @@ feature:
   icon_pack: fas
   name: Statistiques
 - description: Data Visualisation avec D3.js (HTML, CSS, JavaScript)
-  icon: htmlcssjs
+  icon: d3
   icon_pack: custom
   name: D3
 - description: Importer les données, les gérer, créer de requêtes 
@@ -43,7 +43,7 @@ feature:
 - description: Maitrise de la suite Microsoft
   icon: microsoft
   icon_pack: fab
-  name: Excel, Word, Powerpoint, Access, Power BI
+  name: Excel (VBA), Word, Powerpoint, Access, Power BI
 
 # Uncomment to use emoji icons.
 #- icon: ":smile:"
