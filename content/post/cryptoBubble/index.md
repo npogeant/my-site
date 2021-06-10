@@ -20,6 +20,9 @@ In this article, I will explain how I did the chart and show some of the results
 
 The visualization I created is the following one (available on [Observable](https://observablehq.com/d/4af37b5b43cce051)) :
 
+<iframe width="100%" height="721" frameborder="0"
+  src="https://observablehq.com/embed/@npogeant/crypto-market-top-100-currencies?cells=viewof+variable%2Cchart"></iframe>
+
 ### Cryptocurrency Market Bubble Chart
 
 **June 04 2021**
