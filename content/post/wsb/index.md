@@ -98,27 +98,22 @@ model.fit(X)
 We did that for the titles and the bodies of the posts but we decided to only show the body ones because it is based on a better and bigger corpus whereas titles are just a sentences.
 
 ![](../../img/1__NbpKxjRiV6v0LG21a3Ts5w.png)
-undefined
 
 The **first topic** relates to the stock market, it is a general topic with words such as stock/market/price…
 
 ![](../../img/1__Ol__YXJ35fuW5Qlt6MJjf5w.png)
-undefined
 
 The **second topic** is around the term : buy. It is referred to the buying of GME and other stocks.
 
 ![](../../img/1__x9MxQ7tyzCkpcWuRSo9piQ.png)
-undefined
 
 The **third topic** is more around holding the position, “to the moon”, winning…
 
 ![](../../img/1__7KyLndCEz__LLCZan3VPCNg.png)
-undefined
 
 This **fourth topic** is targeting the stocks themselves : AMC, GME, NOK, BB, NAKD…
 
 ![](../../img/1__APB1__7EcLvW__ZISdUw8__pg.png)
-undefined
 
 An finally, the **last topic** is very interesting because it shows the fight between the reddit users from WSB and trading apps such as the famous **_Robinhood_**.
 

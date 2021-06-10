@@ -49,9 +49,9 @@ _Let’s now look at these results…_
 To maximize your chances of finding a job, looking into the top cities or the top companies in a field is something important. Obviously, the more you have offers, the more you will have opportunities to be hired. However, the more you have offers, the more you will have competitors against you, so you would have to be better than them to stand out.
 
 As the location specified on Indeed can be a city or an entire address, I had to clean the column with the next function (duplicated for every city with multiple addresses) :
-
+```python
 jobs.loc\[jobs.Location.str.contains('New York'), 'Location'\] = 'New York'
-
+```
 Once that done, I grouped the data by location to get the top 10 cities by job offers and it looked like that.
 
 ![](../../img/1__eKOTrFP07725jHowHW9GXg.png)
@@ -61,9 +61,9 @@ London is the top 1 with 229 job offers, followed by two Canadian cities, Toront
 Now that we have the places to work in finance, let’s take a look at which companies are the most offering.
 
 I started by looking at the number of companies in the dataset.
-
+```python
 jobs.Company.nunique()
-
+```
 I counted 1410 unique companies from Morgan Stanley to East West College. There are all types of companies in the dataset.
 
 The ranking after a groupby function is the following :
@@ -73,20 +73,20 @@ The ranking after a groupby function is the following :
 We observe that the Royal Bank of Canada is leading the top and that the Bank of Montreal is following. That can be surprising but the two are part of the 5 biggest banks of Canada and are within the 100 largest banks in the world. Facebook is the third company offering job in Finance with 19 job offers. We can spot Deloitte, the famous Anglo-American services network, but also Citigroup, JPMorgan Chase Bank and finally KPMG another network from the Big Four.
 
 However, looking for a job is not just choosing the position but also the company. Therefore, it is important to know the company you are applying for. Indeed has a feature of rating allowing applicants to have an idea about the company. I looked at these ratings from 1 to 5 (on 5).
-
+```python
 jobs\_rating = jobs\[\['Company', 'Company\_Rating'\]\]  
 jobs\_rating.columns = \['Company', 'Rating'\]  
 jobs\_rating.sort\_values(by='Rating', inplace=True, ascending=False)  
 jobs\_rating.drop\_duplicates(inplace=True)
-
+```
 ![](../../img/1__7EhMoOl5Y0bHe121f0MFnQ.png)
 
 One of the best rated companies is Linley & Simpson, a real estate enterprise in the UK. We can observe two companies rated 1, AgencyAnalytics and Toyota Subaru Sheboygan.
 
 It can be interesting to look at the ratings of the companies offering the most in Finance.
-
+```python
 jobs\_rating.loc\[jobs\_rating\['Company'\].isin(topjobs\_bycompany\['Company'\].tolist())\]
-
+```
 ![](../../img/1__ATD__iPqjsi8aLp8S8QScpg.png)
 
 Facebook is the best company from the employees, RBC/KPMG/Deloitte are the second ones. We notice that overall these companies are well rated.
@@ -131,9 +131,9 @@ To do that, I needed to work on the salaries column because the information in I
 I used some regular expressions and created some function to get to the results. I needed also to convert £ into $, so I divided the dataset to deal with £ and I used a library to convert it correctly.
 
 Let’s see the distribution of salaries :
-
+```python
 salaryperyrs.Salary.describe()
-
+```
 The highest salary equals to **$350,000** and the least one is **$10,051**. The median salary is **$44,212** which is quite good I would say.
 
 When we now look at the most paid jobs, we get these results :
@@ -166,16 +166,16 @@ To finish this analysis, I looked at the summary of the offers and work with NLP
 To analyze the summary of the offers, I decided to gather summaries by titles first and then to look at the entire dataset.
 
 First of all, I cleaned up the summaries with regular expressions (clean\_sum is a special function with regex inside):
-
+```python
 sum\_clean = pd.DataFrame(offer\_sum.Summary.apply(lambda x :clean\_sum(x)))  
 sum\_clean.Summary = sum\_clean.Summary.apply(lambda x: ' '.join(\[word for word in x if word not in (stop)\]))
-
+```
 Once cleaned, let’s tokenize and lemmatize with the NLTK library :
-
+```python
 lemmer = WordNetLemmatizer()  
 sum\_clean.Summary = sum\_clean.Summary.apply(lambda x: word\_tokenize(x))  
 sum\_clean.Summary = sum\_clean.Summary.apply(lambda x : \[lemmer.lemmatize(y) for y in x\])
-
+```
 The summary now tokenized and lemmatized, we are able to show the frequency of each word in the dataset (by titles firstly). I used the _Counter()_ function to create a frequency dataframe and built 3 wordclouds for Financial Analysts, Traders and Financial Assistants.
 
 **Financial Analyst :**
