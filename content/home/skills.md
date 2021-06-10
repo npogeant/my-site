@@ -48,6 +48,10 @@ feature:
   icon: qlik-sense
   icon_pack: custom
   name: Qlik Sense
+- description: Création de présentations, BI
+  icon: keynote
+  icon_pack: custom
+  name: Keynote
 - description: Descriptives, inférentielles, prédictives, statistiques appliquées
   icon: stats
   icon_pack: custom
