@@ -38,21 +38,21 @@ Let’s pass to the code…
 I will not explain everything I did to do it, the code is on the notebook on Observable and my github, but I will highlight the main aspects of it.
 
 Firstly, I had to process the data, this is one example of what I was obliged to modify :
-
+```javascript
 market\_cap: market\_cap.replace(/\\,/g, '').replace(/\\./g, '').slice(0,-2)
-
+```
 Indeed, the dots and commas where a problem, so I removed them in almost every column.
 
 Once the data connected, and because it was a csv, I had to create a hierarchy of it so that each node gets parameters allowing the building of the chart.
-
+```javascript
 const root = d3.hierarchy({children: data})  
  .sum(function(d) { return d\['market\_cap'\]; })  
  .sort(function(a, b) { return b\['market\_cap'\] - a\['market\_cap'\]; })
-
+```
 In the example above, I took the market cap variable to have my hierarchy.
 
 Then, I created the svg and all the circles associated to the nodes (every currency). I entered, appended groups (g) and used the ‘transform’ attribute to place each circle. The size of the circles are equal to the ‘r’ variable of each row (which are created within the hierarchy).
-
+```javascript
 const node = svg.selectAll(".node")  
  .data(pack(root).leaves())  
  .enter().append("g")  
@@ -64,9 +64,9 @@ node.append("circle")
        .data(pack(root).leaves())  
       .attr("id", function(d) { return d.id; })  
       .attr("r", function(d) { return d.r; })
-
+```
 Finally, I added the labels by appending texts. The first one are the symbol variable and the second one are the variable used to create the circle, I decided to have market capitalization as the initial variable of the chart.
-
+```javascript
 node.append("text")  
         .attr("class","labels")  
         .attr("dy", ".2em")  
@@ -92,17 +92,17 @@ node.append("text")
         })  
         .attr("fill", "white")  
         .style("text-anchor", "middle");
-
+```
 I also added a tooltip with mouseover, mousemove and mouseleave as function.
 
 Finally, I wanted it to be interactive, allowing the choice of the variable in the bubble. Thus, I created a update function with one parameter and selection/transition on the different element of the svg.
-
+```javascript
 svg.node().drawData = function updateData(variable) {
 
 ....
 
 }
-
+```
 Details of the function are in the notebook, the variable updating the chart’s data is obtained by the 4 radio buttons above the svg.
 
 Let’s look at the chart itself, what is interesting to notice…
