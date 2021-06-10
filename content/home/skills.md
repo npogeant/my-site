@@ -24,7 +24,7 @@ feature:
   icon: r
   icon_pack: custom
   name: R
-- description: Importer les données, les gérer, créer de requêtes 
+- description: Importation de données, création de requêtes 
   icon: sql
   icon_pack: custom
   name: SQL
