@@ -32,10 +32,10 @@ feature:
   icon: chart-line
   icon_pack: fas
   name: Statistiques
-- description: Data Visualisation avec D3.js
+- description: Data Visualisation avec D3.js (HTML, CSS, JavaScript)
   icon: htmlcssjs
   icon_pack: custom
-  name: HTML, CSS, JavaScript
+  name: D3
 - description: Importer les données, les gérer, créer de requêtes 
   icon: sql
   icon_pack: custom
@@ -44,10 +44,6 @@ feature:
   icon: microsoft
   icon_pack: fab
   name: Excel, Word, Powerpoint, Access, Power BI
-- description: T
-  icon: dataiku
-  icon_pack: custom
-  name: Dataiku
 
 # Uncomment to use emoji icons.
 #- icon: ":smile:"

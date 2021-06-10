@@ -10,8 +10,6 @@ slug: >-
   /@npogeant/what-the-crypto-market-looks-like-an-interactive-d3-js-bubble-chart-14a64cd4089e
 ---
 
-![](img/0__YUYMuLCXaDistny__.jpg)
-
 **Data visualization** is the way to communicate results of data analysis. It means creating stories, visual context to make data easier to understand. It has become always more important with all the large datasets we face today.
 
 As a data analyst greatly interested into data visualization and every tool of representing findings, I decided to dive into **d3.js**, the famous JavaScript library. What I like the most about it is the fact that it allows you to create what you want, exactly the way you want it. You are not limited by the library, which can be the case with other visualization tools.
