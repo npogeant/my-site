@@ -53,8 +53,8 @@ feature:
   icon_pack: custom
   name: Keynote
 - description: Descriptives, inférentielles, prédictives, statistiques appliquées
-  icon: stats
-  icon_pack: custom
+  icon: chart-bar
+  icon_pack: fas
   name: Statistiques
 - description: Algorithmes d'apprentissage supervisés, non supervisés
   icon: ml
