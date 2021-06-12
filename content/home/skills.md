@@ -56,7 +56,7 @@ feature:
   icon: stats
   icon_pack: custom
   name: Statistiques
-- description: Algorithmes d'apprentissage supervisés, non superisés
+- description: Algorithmes d'apprentissage supervisés, non supervisés
   icon: ml
   icon_pack: custom
   name: Machine Learning
