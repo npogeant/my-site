@@ -37,7 +37,7 @@ feature:
   icon_pack: custom
   name: Tableau
 - description: Création d'applications, tableau de bord à partir de jeu de données
-  icon: power-bi
+  icon: powerbi
   icon_pack: custom
   name: PowerBI
 - description: Data Visualisation avec D3.js (HTML, CSS, JavaScript)
