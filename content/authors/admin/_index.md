@@ -45,7 +45,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'npogeant@gmail.com'
+  link: 'mailto:npogeant@gmail.com'
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/nicolaspogeant/
