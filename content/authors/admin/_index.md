@@ -64,7 +64,9 @@ social:
 # and uncomment the lines below.
 # - icon: cv
 #   icon_pack: ai
-#   link: media/resume.pdf
+#   link: media/resume.pdf 
+
+# {{< icon name="download" pack="fas" >}} Vous pouvez télécharger mon {{< staticref "media/CV Nicolas Pogeant.pdf" "newtab" >}}CV{{< /staticref >}}.
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
@@ -73,7 +75,4 @@ email: ""
 highlight_name: false
 ---
 
-Data Scientist. Diplomé de la Sorbonne en Économie, d'Assas en Finance, de Data Science à l'université Gustave Eiffel.
-
-
-# {{< icon name="download" pack="fas" >}} Vous pouvez télécharger mon {{< staticref "media/CV Nicolas Pogeant.pdf" "newtab" >}}CV{{< /staticref >}}.
+Data Scientist et Data Visualization Developer - Diplomé de la Sorbonne en Économie, d'Assas en Finance, de Data Science à l'université Gustave Eiffel.
