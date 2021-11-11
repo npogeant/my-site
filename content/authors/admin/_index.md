@@ -73,7 +73,7 @@ email: ""
 highlight_name: false
 ---
 
-Diplomé de la Sorbonne en Économie, d'Assas en Finance, je termine actuellement un second master en Data Science à l'Université Gustave Eiffel. J'ai pris goût pour le Big Data il y a plusieurs années maintenant. J'adore l'analyse de données diverses et variées, les comprendre, en tirer des résultats,  des histoires en créant des visualisations. Que ce soit de l'analyse descriptive ou prédictive, j'aime concevoir à partir des outils que je connais comme apprendre et m'adapter à ceux que je ne maitrise pas encore.
+Data Scientist. Diplomé de la Sorbonne en Économie, d'Assas en Finance, de Data Science à l'université Gustave Eiffel.
 
 
-{{< icon name="download" pack="fas" >}} Vous pouvez télécharger mon {{< staticref "media/CV Nicolas Pogeant.pdf" "newtab" >}}CV{{< /staticref >}}.
+# {{< icon name="download" pack="fas" >}} Vous pouvez télécharger mon {{< staticref "media/CV Nicolas Pogeant.pdf" "newtab" >}}CV{{< /staticref >}}.
