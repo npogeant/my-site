@@ -22,13 +22,27 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+  - title: Data Scientist SEO
+    company: ePerf Consulting
+    company_url: ''
+    company_logo: comp-e
+    location: Paris, Île-de-France, France
+    date_start: '2021-09-20'
+    date_end: ''
+    description: |2-
+        * Creation de pipeline de récupération de données SEO (Google, AT Internet, Google Analytics, Google Search Console, Google Trends...)
+        * Design de dashboard PowerBI
+        * Création d'application web python
+        * Analyse statisiques de données massives SEO
+        * Natural Langage Processing d'articles (Distribution de mots clés, sentiment, clustering, topic modelling...)
+        
   - title: Apprenti Chargé d'études SFE
     company: Menarini
     company_url: ''
     company_logo: comp-m
     location: Rungis, Île-de-France, France
     date_start: '2020-09-28'
-    date_end: ''
+    date_end: '2021-09-10'
     description: |2-
         * Traitement et exploitation des données de CRM
         * Mise à jour des bases clients

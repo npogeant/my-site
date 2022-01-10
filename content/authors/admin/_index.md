@@ -6,12 +6,12 @@ title: Nicolas Pogeant
 superuser: true
 
 # Role/position/tagline
-role: Chargé d'études
+role: Data Scientist
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Menarini
-  url: https://www.menarini.fr/
+- name: ePerf Consulting
+  url: 
 
 # Short bio (displayed in user profile at end of posts)
 bio: Diplomé de la Sorbonne en Économie, d'Assas en Finance, je termine actuellement un second master en Data Science à l'Université Gustave Eiffel. J'ai pris goût pour le Big Data il y a plusieurs années maintenant.
